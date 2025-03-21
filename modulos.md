@@ -2,7 +2,7 @@
 title: Módulos del Convida Abejas
 description: 
 published: true
-date: 2025-03-21T19:10:07.186Z
+date: 2025-03-21T22:42:24.788Z
 tags: 
 editor: markdown
 dateCreated: 2025-03-21T19:10:05.093Z
@@ -13,12 +13,12 @@ dateCreated: 2025-03-21T19:10:05.093Z
 - Alimentación, polen, néctar y miel
 - Apicultura
 - Biología de abejas
-- Cadena reproductiba de la cera, miel, etc. 
+- Cadena reproductiva de la cera, miel, etc. 
 - Calendarios anual de plantas
+- [Ciclo reproductivo de las abejas](/modulos/ciclo-reproductivo)
 - Colmena súper-organismo
 - Comunicación
 - Control de feromonas
-- Ciclo reproductivo de las abejas
 - Diversidad
 - Ecología de las abejas
 - Historias de vida
