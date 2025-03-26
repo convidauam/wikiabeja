@@ -2,7 +2,7 @@
 title: Convida Abeja
 description: 
 published: true
-date: 2025-03-22T21:40:55.216Z
+date: 2025-03-26T02:11:33.307Z
 tags: 
 editor: markdown
 dateCreated: 2025-03-21T18:55:50.184Z
@@ -12,5 +12,6 @@ dateCreated: 2025-03-21T18:55:50.184Z
 
 - [Módulos planeados](/modulos)
 - [Componentes del proyecto](/componentes)
+- [Equipos Convida](/equipos)
 
 Estos contenidos son parte del [Proyecto Convida de la UAM](https://www.convidauam.com/).
