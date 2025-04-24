@@ -2,7 +2,7 @@
 title: Editor CONVIDA
 description: Pagina principal del editor convida
 published: true
-date: 2025-04-24T05:36:09.060Z
+date: 2025-04-24T06:46:19.309Z
 tags: editor
 editor: ckeditor
 dateCreated: 2025-03-26T02:14:46.829Z
@@ -19,7 +19,36 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <p>&nbsp;</p>
 <h3>Editor gráfico</h3>
 <p>Se propone la creación de un programa, alojado en el navegador, que permita al usuario generar diagramas, tales como las representaciones gráficas propuestas, en un entorno visual. Este navegador podrá ser desarrollado en Godot Engine o en alguna otra plataforma.&nbsp;</p>
+<p>Se plantea de momento el desarrollo de este programa mediante el uso de <a href="https://reactflow.dev/">React Flow</a>, &nbsp;una biblioteca diseñada para la construcción de aplicaciones basadas en nodos. <sup>1</sup> React Flow es a su vez, un componente modificable de <a href="https://react.dev/">React.js</a> ,<a href="https://react.dev/"> </a>otra biblioteca Javascript. Es requerido como base para emplear estas bibliotecas el uso de <a href="https://nodejs.org/es">Node.js</a>, un entorno de ejecución de JavaScript multiplataforma.&nbsp;</p>
+<p>Adicionalmente, para el desarrollo de este editor se emplea el editor de código fuente <a href="https://code.visualstudio.com/ ">Visual Studio Code</a> y el servidor de desarrollo local <a href="https://vite.dev/">Vite</a>.&nbsp;</p>
+<p>React Flow, React.js y Node.js son software de código abierto.</p>
 <p>&nbsp;</p>
+<h4>Configuración en Visual Studio Code</h4>
+<p>Para generar una una configuración mínima para que React funcione en Vite con HMR en Visual Studio Code se requiere como requisito</p>
+<p>-instalar Node.js (esto se puede hacer directamente desde la <a href="https://nodejs.org/en/download)">página de Node.js</a>)</p>
+<p>-Instalar Visual Studio Code (esto se puede hacer directamente desde <a href=" https://code.visualstudio.com/download">la página de VS Code</a>)</p>
+<p>Posteriormente, se crea una carpeta desde Visual Studio Code para contener el proyecto. Usando la terminal CMD del editor se introducen los siguientes comandos.&nbsp;</p>
+<p><code>npm -v</code></p>
+<p>A manera de verificar la instalación de node.js y su manejador de paquetes, debe regresar un número de versión en la terminal.</p>
+<p><code>npm create vite@latest my-flow-app --template react</code></p>
+<p><code>&nbsp;npx</code></p>
+<p><code>create-vite my-flow-app react</code></p>
+<p>Esto para importar una plantilla de React que permite su funcionamiento en Vite.</p>
+<p><code>◇&nbsp; Select a framework:</code></p>
+<p><code>│&nbsp; React</code></p>
+<p><code>◇&nbsp; Select a variant:</code></p>
+<p><code>│&nbsp; JavaScript</code></p>
+<p>Se selecciona como framework la biblioteca de React y como variante el lenguaje Java Script.</p>
+<p>Para finalizar se introducen los comandos&nbsp;</p>
+<p><code>cd my-flow-app</code></p>
+<p><code>&nbsp;&nbsp;npm install</code></p>
+<p><code>&nbsp;&nbsp;npm run dev</code></p>
+<p>Para crear la carpeta contenedora de la app, instalar y configurar el manejador de paquetes propio de node.js (npm) y correr el servidor local.&nbsp;</p>
+<h2>Bibliografía</h2>
+<ol>
+  <li>&nbsp;Introdución a React Flow <a href="https://reactflow.dev/learn/concepts/introduction"><u>https://reactflow.dev/learn/concepts/introduction</u></a></li>
+  <li>&nbsp;</li>
+</ol>
 <h2>Ligas útiles</h2>
 <ul>
   <li><a href="https://docs.godotengine.org/en/stable/tutorials/ui/index.html">Documentación de Godot Engine para Interfaz de Usuario (UI)</a></li>
