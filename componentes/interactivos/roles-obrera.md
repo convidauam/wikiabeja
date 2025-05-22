@@ -2,7 +2,7 @@
 title: Interactivo Roles de la Obrera
 description: 
 published: true
-date: 2025-05-22T17:54:13.200Z
+date: 2025-05-22T22:08:41.242Z
 tags: contenidos interactivos
 editor: markdown
 dateCreated: 2025-05-22T17:02:54.217Z
@@ -32,6 +32,8 @@ Estos tres factores varían a lo largo de la partida según las decisiones que t
 ### Creación del game loop y flujo de pantallas
 Luego de la etapa de investigación y conceptualización, se desarrolló un diagrama de flujo que representa el game loop principal del videojuego, es decir, el ciclo de acciones que el jugador repetirá durante la partida: tomar decisiones, ver sus consecuencias, y administrar los recursos de la colmena.
 
-Además, se diseñó el flujo de pantallas, una representación visual que muestra cómo el jugador navegará por las diferentes secciones del juego (inicio, menú principal, juego en curso, resultados, etc.). Esto permitió organizar la estructura del videojuego y planificar cómo se presentará la información y las decisiones al jugador de forma clara y coherente.
+Además, se diseñó el flujo de pantallas, una representación visual de cómo el jugador navegará entre las distintas secciones del juego (pantalla de inicio, menú, juego principal, pantalla de resultados, entre otras). En esta etapa también se propusieron distintos tipos de interfaces para cada pantalla, con el fin de planificar su posterior implementación dentro del desarrollo del juego.
 
+### Repositorio e inicio de la programación
+Una vez establecidas las bases del juego, se decidió crear un repositorio en GitHub con el objetivo de gestionar el desarrollo del código y facilitar futuras mejoras. Paralelamente, se inició el proyecto en Unity, lo que permitió comenzar con la creación de un prototipo funcional que incluye las mecánicas principales del juego. Esta etapa marcó el inicio formal de la programación del videojuego.
 
