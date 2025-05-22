@@ -2,7 +2,7 @@
 title: Interactivo Roles de la Obrera
 description: 
 published: true
-date: 2025-05-22T17:40:18.018Z
+date: 2025-05-22T17:54:13.200Z
 tags: contenidos interactivos
 editor: markdown
 dateCreated: 2025-05-22T17:02:54.217Z
@@ -28,3 +28,10 @@ Estas mecánicas fueron reinterpretadas para ajustarse al contexto de una colmen
 **Población de abejas**
 
 Estos tres factores varían a lo largo de la partida según las decisiones que tome el jugador, reflejando los desafíos que enfrenta una colonia real al buscar su supervivencia.
+
+### Creación del game loop y flujo de pantallas
+Luego de la etapa de investigación y conceptualización, se desarrolló un diagrama de flujo que representa el game loop principal del videojuego, es decir, el ciclo de acciones que el jugador repetirá durante la partida: tomar decisiones, ver sus consecuencias, y administrar los recursos de la colmena.
+
+Además, se diseñó el flujo de pantallas, una representación visual que muestra cómo el jugador navegará por las diferentes secciones del juego (inicio, menú principal, juego en curso, resultados, etc.). Esto permitió organizar la estructura del videojuego y planificar cómo se presentará la información y las decisiones al jugador de forma clara y coherente.
+
+
