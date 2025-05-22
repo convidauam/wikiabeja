@@ -2,7 +2,7 @@
 title: Interactivo Roles de la Obrera
 description: 
 published: true
-date: 2025-05-22T22:08:41.242Z
+date: 2025-05-22T22:10:41.892Z
 tags: contenidos interactivos
 editor: markdown
 dateCreated: 2025-05-22T17:02:54.217Z
@@ -35,5 +35,8 @@ Luego de la etapa de investigación y conceptualización, se desarrolló un diag
 Además, se diseñó el flujo de pantallas, una representación visual de cómo el jugador navegará entre las distintas secciones del juego (pantalla de inicio, menú, juego principal, pantalla de resultados, entre otras). En esta etapa también se propusieron distintos tipos de interfaces para cada pantalla, con el fin de planificar su posterior implementación dentro del desarrollo del juego.
 
 ### Repositorio e inicio de la programación
-Una vez establecidas las bases del juego, se decidió crear un repositorio en GitHub con el objetivo de gestionar el desarrollo del código y facilitar futuras mejoras. Paralelamente, se inició el proyecto en Unity, lo que permitió comenzar con la creación de un prototipo funcional que incluye las mecánicas principales del juego. Esta etapa marcó el inicio formal de la programación del videojuego.
+Una vez establecidas las bases del juego, se decidió crear un repositorio en GitHub con el objetivo de gestionar el desarrollo del código y facilitar futuras mejoras. Paralelamente, se inició el proyecto en Unity, lo que permitió comenzar con la creación de un prototipo funcional que incluye las mecánicas principales del juego.
+
+Desde el inicio, el desarrollo fue planteado con especificaciones orientadas a un juego móvil. Tanto la interfaz de usuario (UI) como la programación se enfocaron en pantallas táctiles e interacciones propias de dispositivos móviles, asegurando una experiencia fluida y adaptada al formato.
+
 
