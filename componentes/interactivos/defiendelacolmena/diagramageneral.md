@@ -2,13 +2,12 @@
 title: Diagrama General
 description: En este apartado se muestra el diagrama general del contenido interactivo "Defiende la colmena"
 published: true
-date: 2025-07-21T20:02:05.660Z
+date: 2025-07-22T02:44:15.936Z
 tags: 
 editor: markdown
 dateCreated: 2025-07-21T20:02:05.660Z
 ---
 
-# Diagrama General
 A continuacion se muestra el diagrama que ejemplifica la interacción entre el contenido interactivo *Defiende la colmena* y la plataforma Convida.
 ![diagrama_general_2.0.png](/diagrama_general_2.0.png){.align-center}
 
