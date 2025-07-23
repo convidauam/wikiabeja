@@ -2,7 +2,7 @@
 title: Diagrama Lógico
 description: En este apartado se explica el diagrama que muestra la lógica de navegación dentro de la GUI del contenido interactivo "Defiende la colmena".
 published: true
-date: 2025-07-23T18:36:15.091Z
+date: 2025-07-23T18:37:19.228Z
 tags: 
 editor: markdown
 dateCreated: 2025-07-23T17:35:29.987Z
@@ -28,9 +28,9 @@ Como podemos ver, cuando el usuario ingresa a *Defiende la colmena* lo primero q
 En este submenú el usuario es capaz de elegir entre crear una nueva partida o continuar una partida creada anteriormente. Sin importar cual de estas opciones eliga el usuario, el siguiente paso es ingresar a la interfaz principal del juego. Dentro de la interfaz principal del juego, el usuario podrá realizar 2 acciones:
 1. **Pausar el juego**: Esta acción desplegará el Menú de Pausa en el cuál se podrá realizar las siguientes acciones:
 	- ***Continuar***: Esta opción permite cerrar el menú de pausa y continuar con el juego.
-  - ***Opciones***: Esta opciones permite ingresar al submenú *Opciones* el cual será explicado su propio apartado más adelante.
-  - ***Menú Principal***: Esta opción permite al usuario regresar al menú principal.
-  - ***Salir***: Esta opción permite al usuario salir directamente del videojuego.
+	- ***Opciones***: Esta opciones permite ingresar al submenú *Opciones* el cual será explicado su propio apartado más adelante.
+	- ***Menú Principal***: Esta opción permite al usuario regresar al menú principal.
+	- ***Salir***: Esta opción permite al usuario salir directamente del videojuego.
 2. **Inteligencia**: Está acción permite al usuario ingresar al submenú *Inteligencia* el cuál es explicado en su propio apartado más adelante.
 
 ### Submenú *Inteligencia*
