@@ -2,7 +2,7 @@
 title: Diagrama General
 description: En este apartado se muestra el diagrama general del contenido interactivo "Defiende la colmena"
 published: true
-date: 2025-07-22T02:58:54.865Z
+date: 2025-07-23T17:35:43.765Z
 tags: 
 editor: markdown
 dateCreated: 2025-07-21T20:02:05.660Z
