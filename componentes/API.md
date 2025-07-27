@@ -2,13 +2,17 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2025-07-25T02:24:02.658Z
+date: 2025-07-27T03:14:01.931Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
 ---
 
 # API
+> La información del proceso de conexión de la API con el Front-end se encuentra en la siguiente página: [Conexión cliente servidor](/componentes/API/Conexión_Cliente_Servidor).
+{.is-info}
+
+
 Obtención de contenidos desde la Base de Datos Orientada a Objetos hacia el cliente (FrontEnd).
 > ![contenidosinteractivoshaciafront.png](/contenidosinteractivoshaciafront.png)
 Diagrama general de la comunicación desde la BD orientada a objetos con el cliente
