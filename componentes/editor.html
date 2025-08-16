@@ -2,7 +2,7 @@
 title: Editor CONVIDA
 description: Pagina principal del editor convida
 published: true
-date: 2025-08-16T03:11:48.821Z
+date: 2025-08-16T03:31:28.185Z
 tags: editor
 editor: ckeditor
 dateCreated: 2025-03-26T02:14:46.829Z
@@ -65,7 +65,7 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <h2>Funcionalidades</h2>
 <p>Las funcionalidades actuales del editor gráfico son:</p>
 <ul>
-  <li>&nbsp;Crear nodos, editar su color y texto</li>
+  <li>Crear nodos, editar su color y texto</li>
   <li>Crear conexiones entre nodos, editar su aspectyo y añadir etiquetas.</li>
   <li>Exportar los diagramas en archivos json, png y svg</li>
 </ul>
@@ -75,12 +75,12 @@ dateCreated: 2025-03-26T02:14:46.829Z
 </ul>
 <p>A implementar:</p>
 <ul>
-  <li>&nbsp;Función de importar y leer archivos json</li>
-  <li>&nbsp;Aspecto de flecha (direccional) para las conexiones</li>
+  <li>Función de importar y leer archivos json</li>
+  <li>Aspecto de flecha (direccional) para las conexiones</li>
   <li>Posibles tipos de nodo</li>
-  <li>&nbsp;Nodos- imagen<ul>
-      <li>&nbsp;Banco de iconos, con barra lateral para importarlos.</li>
-      <li>&nbsp;(codificar cada imagen con nombre)</li>
+  <li>Nodos- imagen<ul>
+      <li>Banco de iconos, con barra lateral para importarlos.</li>
+      <li>(codificar cada imagen con nombre)</li>
     </ul>
   </li>
 </ul>
@@ -131,31 +131,41 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <p>&nbsp;El código está modularizado para permitir agregar más temas, tipos de nodos, funcionalidad de exportación, etc.</p>
 <hr>
 <p>&nbsp;</p>
-<h3>## Para comunicación con Backend:</h3>
+<h2>## Para comunicación con Backend:</h2>
 <p>&nbsp;</p>
 <h4><strong>Función de importación y lectura de los JSON:</strong></h4>
 <p>&nbsp;</p>
-<p>xd</p>
+<p><strong>Función de importacicon y lectura de los JSON:</strong></p>
+<p><strong>Hook personalizado:</strong></p>
+<ul>
+  <li>Archivo: <code>src/hooks/useDiagram.ts</code></li>
+  <li>Función: <code>importFromJson(file: File)</code></li>
+</ul>
+<p><strong>Barra de herramientas (Toolbar):</strong></p>
+<ul>
+  <li>Archivo: <code>src/components/Toolbar/Toolbar.tsx</code></li>
+  <li>Prop: <code>onImportJson</code></li>
+  <li>Handler: <code>handleImportJson</code></li>
+</ul>
+<p><strong>Uso en el canvas:</strong></p>
+<ul>
+  <li>Archivo: <code>src/components/Diagram/DiagramCanvas.tsx</code></li>
+  <li>Se pasa la función <code>importFromJson</code> como prop a <code>Toolbar</code>.</li>
+</ul>
 <p>&nbsp;</p>
 <h4><strong>Función de exportación de JSON:</strong></h4>
-<p>Se llama **`exportToJson`** y se encuentra en:</p>
-<p>```plaintext</p>
-<p>src/utils/export.ts</p>
-<p>```</p>
-<p><strong>Funcionamiento general:</strong></p>
-<p>&nbsp;</p>
-<p>La función `exportToJson` recibe dos parámetros:</p>
-<p>- Una instancia de React Flow (`reactFlowInstance`), que contiene el estado actual del diagrama.</p>
-<p>- Un nombre de archivo (opcional, por defecto: `'diagrama.json'`).</p>
-<p>&nbsp;</p>
-<p>- **Convierte el diagrama:** Utiliza el método `.toObject()` de la instancia para obtener los datos del diagrama (nodos, conexiones, posiciones, etc.).</p>
-<p>- **Serializa a JSON:** Usa `JSON.stringify` para convertir los datos a texto JSON legible.</p>
-<p>- **Prepara la descarga:** Crea un elemento `&lt;a&gt;` (enlace) temporal, configura su atributo `href` con el contenido JSON codificado y `download` con el nombre de archivo.</p>
-<p>- **Dispara la descarga:** Añade el enlace al DOM, simula un clic y luego lo elimina, logrando que el navegador descargue el archivo JSON.</p>
-<p>&nbsp;</p>
-<p>En la Interfaz: &nbsp;en el componente de la barra de herramientas (`src/components/Toolbar/Toolbar.tsx`), hay un botón llamado "Exportar JSON". &nbsp;</p>
-<p>Cuando el usuario hace clic en ese botón, se llama a un handler como `handleExportJson`, que a su vez invoca la función `exportToJson` pasando la instancia actual del diagrama.</p>
-<p>&nbsp;</p>
+<p><strong>Funcion de exportación de JSON:</strong> Se llama <code><strong>exportToJson</strong></code> y se encuentra en:</p>
+<pre><code class="language-plaintext">src/utils/export.ts
+</code></pre>
+<p>Funcionamiento general</p>
+<p>La función <code>exportToJson</code> recibe dos parámetros:</p>
+<p>Una instancia de React Flow (<code>reactFlowInstance</code>), que contiene el estado actual del diagrama.</p>
+<p>Un nombre de archivo (opcional, por defecto: <code>'diagrama.json'</code>).</p>
+<p><strong>Convierte el diagrama:</strong> Utiliza el método <code>.toObject()</code> de la instancia para obtener los datos del diagrama (nodos, conexiones, posiciones, etc.).</p>
+<p><strong>Serializa a JSON:</strong> Usa <code>JSON.stringify</code> para convertir los datos a texto JSON legible.</p>
+<p><strong>Prepara la descarga:</strong> Crea un elemento <code>&lt;a&gt;</code> (enlace) temporal, configura su atributo <code>href</code> con el contenido JSON codificado y <code>download</code> con el nombre de archivo.</p>
+<p><strong>Dispara la descarga:</strong> Añade el enlace al DOM, simula un clic y luego lo elimina, logrando que el navegador descargue el archivo JSON.</p>
+<p>En la Interfaz: en el componente de la barra de herramientas (<code>src/components/Toolbar/Toolbar.tsx</code>), hay un botón llamado "Exportar JSON".<br>Cuando el usuario hace clic en ese botón, se llama a un handler como <code>handleExportJson</code>, que a su vez invoca la función <code>exportToJson</code> pasando la instancia actual del diagrama.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2>Bibliografía</h2>
