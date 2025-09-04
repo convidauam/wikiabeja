@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2025-09-04T19:29:33.618Z
+date: 2025-09-04T19:31:36.234Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -172,5 +172,122 @@ Devuelve la estructura de un honeycomb específico, incluyendo:
   ]
 }
 ```
+### Ejemplo real (200) - default
+```
+{
+  "id": "7950d98f-015d-5e24-a7d1-cbd115a420e9",
+  "title": "Convida Abejas",
+  "nodes": [
+    {
+      "id": "7950d98f-015d-5e24-a7d1-cbd115a420e9",
+      "data": {
+        "label": "Convida Abejas",
+        "themeColor": "root",
+        "url": "http://localhost:6543/default/",
+        "icon": null
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "type": "custom",
+      "width": 200,
+      "height": 80
+    },
+    {
+      "id": "3af7a549-2590-4d10-a686-82659346624b",
+      "data": {
+        "label": "Introduction",
+        "themeColor": "default",
+        "url": "http://localhost:6543/default/intro/",
+        "icon": null
+      },
+      "position": {
+        "x": 300,
+        "y": 0
+      },
+      "type": "custom",
+      "width": 152,
+      "height": 58
+    },
+    {
+      "id": "df574d76-e720-4d2c-b84b-ab9cfff5c813",
+      "data": {
+        "label": "Bee Logo",
+        "themeColor": "default",
+        "url": "http://localhost:6543/default/logo/",
+        "icon": "🐝"
+      },
+      "position": {
+        "x": 1.83697019872103e-14,
+        "y": 300
+      },
+      "type": "custom",
+      "width": 152,
+      "height": 58
+    },
+    {
+      "id": "011b7013-959b-42c9-9cda-adfcef5703bc",
+      "data": {
+        "label": "Website",
+        "themeColor": "default",
+        "url": "http://localhost:6543/default/link/",
+        "icon": null
+      },
+      "position": {
+        "x": -300,
+        "y": 3.67394039744206e-14
+      },
+      "type": "custom",
+      "width": 152,
+      "height": 58
+    },
+    {
+      "id": "05181539-f5ef-42f4-b09f-2d804a73d480",
+      "data": {
+        "label": "Bee Dance",
+        "themeColor": "default",
+        "url": "http://localhost:6543/default/bee-dance/",
+        "icon": "🐝"
+      },
+      "position": {
+        "x": -5.51091059616309e-14,
+        "y": -300
+      },
+      "type": "custom",
+      "width": 152,
+      "height": 58
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-7950d98f015d5e24a7d1cbd115a420e9-3af7a54925904d10a68682659346624b",
+      "source": "7950d98f-015d-5e24-a7d1-cbd115a420e9",
+      "target": "3af7a549-2590-4d10-a686-82659346624b",
+      "type": "custom-label"
+    },
+    {
+      "id": "edge-7950d98f015d5e24a7d1cbd115a420e9-df574d76e7204d2cb84bab9cfff5c813",
+      "source": "7950d98f-015d-5e24-a7d1-cbd115a420e9",
+      "target": "df574d76-e720-4d2c-b84b-ab9cfff5c813",
+      "type": "custom-label"
+    },
+    {
+      "id": "edge-7950d98f015d5e24a7d1cbd115a420e9-011b7013959b42c99cdaadfcef5703bc",
+      "source": "7950d98f-015d-5e24-a7d1-cbd115a420e9",
+      "target": "011b7013-959b-42c9-9cda-adfcef5703bc",
+      "type": "custom-label"
+    },
+    {
+      "id": "edge-7950d98f015d5e24a7d1cbd115a420e9-05181539f5ef42f4b09f2d804a73d480",
+      "source": "7950d98f-015d-5e24-a7d1-cbd115a420e9",
+      "target": "05181539-f5ef-42f4-b09f-2d804a73d480",
+      "type": "custom-label"
+    }
+  ]
+}
+```
+---
+## Comunicación entre API y Editor
 
 
