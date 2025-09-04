@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2025-07-27T03:14:01.931Z
+date: 2025-09-04T19:29:33.618Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -42,3 +42,135 @@ Una vez recuperado el contenido, el handler construye un objeto estructurado que
 **7. Respuesta al Cliente**
 Finalmente, Cornice devuelve una respuesta HTTP 200 OK con el contenido convertido a JSON.
 Este JSON contiene todos los datos del contenido solicitado, listo para ser usado en el front-end del cliente.
+
+## API honeycomb
+La API Honeycomb permite gestionar y visualizar estructuras de honeycombs (panales) representadas como grafos con nodos y aristas. Cada honeycomb es un nodo raíz con celdas (nodos hijos) distribuidas de manera circular, conectadas mediante aristas.
+### ¿Qué tecnologías se ocuparon?
+* **Python 3.x**
+Lenguaje base.
+
+* **Pyramid**
+ Framework web principal para crear la aplicación WSGI.
+
+* **Cornice**
+ Extensión para Pyramid que facilita la creación de APIs REST.
+
+* **Cornice-Swagger**
+ Genera automáticamente documentación OpenAPI/Swagger a partir de los recursos y docstrings de Cornice.
+
+* **ZODB**
+Base de datos orientada a objetos usada para almacenar la jerarquía de honeycombs, celdas y sus relaciones.
+
+* **pyramid_zodbconn**
+Integración de ZODB con Pyramid.
+
+* **Jinja2**
+Motor de plantillas para renderizar vistas HTML (además de la API JSON).
+### Endpoints principales
+1. **Listar honeycombs**
+GET <kbd>/api/v1/honeycombs</kbd>
+Devuelve la lista de honeycombs registrados.
+
+2. **Obtener un honeycomb específico**
+GET <kbd>/api/v1/honeycombs/{name}</kbd>
+Devuelve la representación en grafo de un honeycomb: nodo raíz, nodos hijos y aristas.
+
+---
+### Ejemplo de respuesta (200)
+```
+{
+  "honeycombs": [
+    {
+      "id": "default",
+      "title": "Honeycomb principal",
+      "icon": "https://example.com/icon.png"
+    },
+    {
+      "id": "juegos",
+      "title": "Panal de juegos",
+      "icon": "https://example.com/game-icon.png"
+    }
+  ]
+}
+```
+#### Descripción: 
+Devuelve la estructura de un honeycomb específico, incluyendo:
+- Nodo raíz (el honeycomb mismo).
+- Nodos hijos distribuidos en círculo alrededor del nodo raíz.
+- Aristas que conectan el nodo raíz con cada hijo.
+- Parámetros de ruta
+- name (string, requerido) → El nombre único del honeycomb.
+
+### Ejemplo real (200) - panal de juegos
+```
+{
+  "id": "e93faa5a-f290-5c0e-9c11-a8529592f7ae",
+  "title": "Panal de Juegos",
+  "nodes": [
+    {
+      "id": "e93faa5a-f290-5c0e-9c11-a8529592f7ae",
+      "data": {
+        "label": "Panal de Juegos",
+        "themeColor": "root",
+        "url": "http://localhost:6543/panal-de-juegos/",
+        "icon": null
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "type": "custom",
+      "width": 200,
+      "height": 80
+    },
+    {
+      "id": "e883b554-6fef-432d-9cee-b3013b96ebf2",
+      "data": {
+        "label": "Juego de la Serpiente",
+        "themeColor": "default",
+        "url": "http://localhost:6543/panal-de-juegos/juego-de-serpiente/",
+        "icon": null
+      },
+      "position": {
+        "x": 300,
+        "y": 0
+      },
+      "type": "custom",
+      "width": 152,
+      "height": 58
+    },
+    {
+      "id": "cca92735-72c9-427f-95f1-d75593a99cfe",
+      "data": {
+        "label": "Juego de Unity",
+        "themeColor": "default",
+        "url": "http://localhost:6543/panal-de-juegos/juego-unity/",
+        "icon": null
+      },
+      "position": {
+        "x": -300,
+        "y": 3.67394039744206e-14
+      },
+      "type": "custom",
+      "width": 152,
+      "height": 58
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-e93faa5af2905c0e9c11a8529592f7ae-e883b5546fef432d9ceeb3013b96ebf2",
+      "source": "e93faa5a-f290-5c0e-9c11-a8529592f7ae",
+      "target": "e883b554-6fef-432d-9cee-b3013b96ebf2",
+      "type": "custom-label"
+    },
+    {
+      "id": "edge-e93faa5af2905c0e9c11a8529592f7ae-cca9273572c9427f95f1d75593a99cfe",
+      "source": "e93faa5a-f290-5c0e-9c11-a8529592f7ae",
+      "target": "cca92735-72c9-427f-95f1-d75593a99cfe",
+      "type": "custom-label"
+    }
+  ]
+}
+```
+
+
