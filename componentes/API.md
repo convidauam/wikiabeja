@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2025-09-04T19:31:36.234Z
+date: 2025-09-04T19:32:39.513Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -77,7 +77,7 @@ Devuelve la representación en grafo de un honeycomb: nodo raíz, nodos hijos y 
 
 ---
 ### Ejemplo de respuesta (200)
-```
+```json
 {
   "honeycombs": [
     {
@@ -102,7 +102,7 @@ Devuelve la estructura de un honeycomb específico, incluyendo:
 - name (string, requerido) → El nombre único del honeycomb.
 
 ### Ejemplo real (200) - panal de juegos
-```
+```json
 {
   "id": "e93faa5a-f290-5c0e-9c11-a8529592f7ae",
   "title": "Panal de Juegos",
@@ -173,7 +173,7 @@ Devuelve la estructura de un honeycomb específico, incluyendo:
 }
 ```
 ### Ejemplo real (200) - default
-```
+```json
 {
   "id": "7950d98f-015d-5e24-a7d1-cbd115a420e9",
   "title": "Convida Abejas",
