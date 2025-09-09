@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2025-09-04T19:32:39.513Z
+date: 2025-09-09T01:21:43.853Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -289,5 +289,53 @@ Devuelve la estructura de un honeycomb específico, incluyendo:
 ```
 ---
 ## Comunicación entre API y Editor
+### 1. **Frontend (React con React Flow)**
+- 	El archivo **DiagramCanvas.tsx** es el encargado de mostrar el lienzo del diagrama interactivo.
+- 	Cuando el componente se monta (useEffect), hace una petición HTTP al backend:
+  ```typescript
+	fetch('http://localhost:6543/api/v1/honeycombs/default')
+  .then((res) => res.json())
+  .then((json) => {
+    if (json.nodes && json.edges) {
+      setNodes(json.nodes);
+      setEdges(json.edges);
+    }
+  })
+  ```
+-   Esa llamada espera recibir un JSON con la estructura de nodos y edges (conexiones).
+- Una vez recibido, los datos se guardan en el estado (setNodes, setEdges) y React Flow los dibuja en pantalla.
+- Si el JSON no contiene el formato esperado, muestra una alerta para el usuario.
+
+---
+### 2. Backend (Python con Cornice y Pyramid)
+  - El archivo **api.py** define el recurso <kbd>/api/v1/honeycombs/{name}</kbd>.
+  - Cuando el frontend pide GET <kbd>/api/v1/honeycombs/default</kbd> , el backend:
+  1. Busca el honeycomb solicitado en el árbol de recursos (self.request.root[...]).
+  2. Crea un nodo raíz (representa el honeycomb principal).
+  3. Genera nodos hijos distribuidos en círculo (cada uno es un "cell").
+  - Calcula posiciones (x, y) con trigonometría.
+  - Asigna título, ícono y enlace a cada nodo.
+
+4. Crea edges (aristas) desde el nodo raíz hacia cada hijo.
+5. Devuelve un JSON con esta estructura:
+```json
+{
+  "id": "uuid-del-root",
+  "title": "Título del Honeycomb",
+  "nodes": [
+    { "id": "...", "data": {...}, "position": {...} },
+    { "id": "...", "data": {...}, "position": {...} }
+  ],
+  "edges": [
+    { "id": "edge-...", "source": "...", "target": "...", "type": "custom-label" }
+  ]
+}
+```
+---
+### 3. Flujo de comunicación
+1. El frontend envía una petición GET → /api/v1/honeycombs/default.
+2. El backend procesa la solicitud, genera nodos y edges.
+4. El backend responde con un JSON → que describe el grafo.
+5. El frontend recibe el JSON y lo dibuja con React Flow.
 
 
