@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2025-09-09T01:21:43.853Z
+date: 2025-09-30T01:33:25.839Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -287,6 +287,39 @@ Devuelve la estructura de un honeycomb específico, incluyendo:
   ]
 }
 ```
+
+---
+
+## Visualización de información de nodos individuales
+El endpoint <kbd>@resource(path='/api/v1/node/{node_id}', ...)</kbd> define un recurso REST para consultar información detallada de un nodo específico en la estructura de tu aplicación.
+### Descripción del funcionamiento
+* Permite obtener los datos de un nodo usando su identificador único (node_id).
+* Devuelve información como el id, título, contenido, URL, icono, nodos hijos y las conexiones (edges) asociadas a ese nodo.
+
+* Cuando se recibe una petición GET a /api/v1/node/{node_id}, busca el nodo en la estructura interna (root.__nodes__).
+* Si el nodo existe, construye un diccionario con sus datos y, si tiene hijos o edges, los incluye en la respuesta.
+* Si el nodo no existe, responde con un error 404.
+* La respuesta es un JSON con toda la información relevante del nodo, útil para visualizaciones o navegación en la interfaz.
+
+### Ejemplo de uso
+- Una vez que se borró previamente la **Data.fs** podemos ver en terminal los id de los contenidos almacenados en la base de datos, entonces ya podemos acceder a su información individual a partir de ese id, de este modo. 
+
+	<kbd>http://localhost:6543/api/v1/node/63c38b62-1450-4ee2-9879-99ed66f04515</kbd>
+  
+  Se podrá observar en formato **JSON** la información individual del nodo, de esta manera:
+  ```json
+  {
+    "id": "63c38b62-1450-4ee2-9879-99ed66f04515",
+    "label": "Bee Dance",
+    "contents": "",
+    "url": "http://localhost:6543/default/bee-dance/",
+    "iconUrl": "🐝",
+    "nodes": [],
+    "edges": []
+  }
+  ```
+
+
 ---
 ## Comunicación entre API y Editor
 ### 1. **Frontend (React con React Flow)**
@@ -337,5 +370,6 @@ Devuelve la estructura de un honeycomb específico, incluyendo:
 2. El backend procesa la solicitud, genera nodos y edges.
 4. El backend responde con un JSON → que describe el grafo.
 5. El frontend recibe el JSON y lo dibuja con React Flow.
+
 
 
