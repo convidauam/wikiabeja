@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2025-11-28T22:12:59.710Z
+date: 2025-11-28T22:20:06.852Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -17,6 +17,10 @@ dateCreated: 2025-11-28T20:41:06.777Z
 ### Convida
 
 Conjunto de contenidos interconectados temáticamente orientados hacia la exploración y el aprendizaje a través de experiencias en ambientes ludificados.
+
+### Coordenadas
+
+Un atributo que resultad de la calificación de cada nodo de un [Convida](#convida) en función de las habilidades que promueve.
 
 # D
 
