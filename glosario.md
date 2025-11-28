@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2025-11-28T20:49:01.831Z
+date: 2025-11-28T20:52:25.569Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -14,15 +14,16 @@ dateCreated: 2025-11-28T20:41:06.777Z
 
 # C
 
-Convida
-: Conjunto de contenidos interconectados temáticamente orientados hacia la exploración y el aprendizaje a través de experiencias en ambientes ludificados.
+### Convida
+
+Conjunto de contenidos interconectados temáticamente orientados hacia la exploración y el aprendizaje a través de experiencias en ambientes ludificados.
 
 # D
 
 # E
 
-Editor Convida
-: 
+### Editor Convida
+
 
 # F
 
@@ -38,8 +39,8 @@ Editor Convida
 
 # L
 
-Ludificación
-: 
+### Ludificación
+ 
 
 # M
 
@@ -49,8 +50,8 @@ Ludificación
 
 # P
 
-Plataforma Convida
-: 
+### Plataforma Convida
+ 
 
 # Q
 
