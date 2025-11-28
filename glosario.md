@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2025-11-28T20:52:25.569Z
+date: 2025-11-28T21:05:13.913Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -44,11 +44,17 @@ Conjunto de contenidos interconectados temáticamente orientados hacia la explor
 
 # M
 
+### Mapa interactivo
+
 # N
 
 # O
 
 # P
+
+### Paisaje temático
+
+
 
 ### Plataforma Convida
  
