@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2025-11-28T22:11:09.952Z
+date: 2025-11-28T22:12:09.364Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -57,7 +57,7 @@ Conjunto de contenidos interconectados temáticamente orientados hacia la explor
 
 ### Plataforma Convida
  
-Plataforma web interactiva que alberga los contenidos temáticos, los organiza mediante un grafo interactivo y facilita la exploración de los contenidos por medio del [mapa interactivo](#)
+Plataforma web interactiva que alberga los contenidos temáticos, los organiza mediante un grafo interactivo y facilita la exploración de los contenidos por medio del [mapa interactivo](#mapa-interactivo).
 
 # Q
 
