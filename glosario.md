@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2025-11-29T02:30:10.000Z
+date: 2025-11-29T18:03:24.499Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -58,6 +58,7 @@ Un atributo que resultad de la calificación de cada nodo de un [Convida](#convi
 
 ### Paisaje temático
 
+Red de contenidos de un [Convida](#convida) organizados temáticamente a la manera de nodos interconectados en donde la posición de cada uno se determina en función de sus conexiones y de sus [coordenadas](#coordenadas), de manera que nodos cercanos entre sí deberían promover habilidades relacionadas y debería poder accederse a ellos a través de sus conexiones con otros nodos cercanos.
 
 ### Plataforma Convida
  
