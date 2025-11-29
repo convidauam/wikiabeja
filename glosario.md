@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2025-11-29T18:03:24.499Z
+date: 2025-11-29T18:06:40.308Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
