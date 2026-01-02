@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2025-09-30T01:33:25.839Z
+date: 2026-01-02T19:15:47.790Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -370,6 +370,42 @@ El endpoint <kbd>@resource(path='/api/v1/node/{node_id}', ...)</kbd> define un r
 2. El backend procesa la solicitud, genera nodos y edges.
 4. El backend responde con un JSON → que describe el grafo.
 5. El frontend recibe el JSON y lo dibuja con React Flow.
+
+---
+## Obteniendo la información del usuario en la sesión
+Endpoint <kbd>@resource(path='/api/v1/drones/{userid}', ...)</kbd>
+- Descripción: Devuelve información del usuario autenticado siempre que el userid en la URL 	coincida con el userid de la identidad autenticada en la petición.
+### Autenticación y autorización
+- **Autenticación**: Se usa `request.identity` (provista por la configuración de autenticación de la app). Si `request.identity` es false, la respuesta es 401 Unauthorized.
+- **Autorización**: Si `request.matchdict['userid'] != request.identity['userid']`, la respuesta es 403 Forbidden (mismatch de userid). Solo el propio usuario puede consultar su información.
+### Comportamiento y lógica
+1. Obtiene `user = getattr(self.request, 'identity', None)`.
+2. Obtiene `url_userid = self.request.matchdict.get('userid')`.
+3. Si user es `None` -> **responde 401** con JSON de error.
+4. Si `url_userid != user.get('userid')` -> **responde 403** con JSON de error.
+5. Si pasa las comprobaciones -> **responde 200** con un objeto JSON con campos tomados de user.
+### Ejemplo real
+#### ¿Qué pasa si no hizo login el usuario?
+![image.png](/image.png)
+> 401 Unauthorized — no hay identidad en la petición.
+{.is-danger}
+#### Se necesita hacer login antes de querer obtener la información del usuario
+- Basta con visitar `/login` para que la sesión del usuario se active
+
+![login.png](/login.png)
+- Después ya podemos visitar <kbd>@resource(path='/api/v1/drones/{userid}', ...)</kbd>, tomando en cuenta que el id del usuario que está cargado de momento es **convida@unam.social**, entonces el endpoint a visitar es el siguiente <kbd>http://localhost:6543/api/v1/drones/convida@unam.social</kbd> y ahora podremos visualizar la información del usuario en formato JSON
+
+![userid.png](/userid.png)
+> 200 OK — petición válida y userid coincide.
+{.is-success}
+
+#### Ahora, ¿qué pasa si se digita mal el id del usuario?
+Intentaremos poner como id del usuario el siguiente convida@unam.
+Recibimos esta respuesta:
+![userid2.png](/userid2.png)
+> 403 Forbidden — identidad presente pero userid en URL no coincide
+{.is-danger}
+
 
 
 
