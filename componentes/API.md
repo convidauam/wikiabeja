@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2026-01-04T01:59:59.966Z
+date: 2026-01-04T02:16:38.449Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -493,6 +493,29 @@ Si acaso hubiera un error en la terminal se vería de esta manera
 Ahora para verificar la información cargada a dicho nodo mediante **GET**, podemos hacerlo desde el navegador, visitando la siguiente ruta: <kbd>http://localhost:6543/api/v1/sipping/node-24542b5b-ece1-45fa-975e-6c54744e</kbd>, ahí veremos la información previamente enviada el en **POST**. Veremos algo así.
 
 ![nodos.png](/nodos.png)
+
+---
+## Obtener id de usuario que hizo login
+Endpoint <kbd>@resource(path='/api/v1/userid', ...)</kbd>
+- **Descripción**: corresponde a un recurso de la API que permite obtener el identificador único (userid) del usuario autenticado, accediendo nuevamente a <kbd>http://localhost:6543/login</kbd>.
+### Comportamiento
+1. Autenticación:
+	- Se obtiene el usuario autenticado desde `self.request.identity`.
+	- Si no hay un usuario autenticado (user es None), responde con un código de estado **401** 		Unauthorized y un mensaje de error.
+  2. Respuesta:
+ 	- Si el usuario está autenticado, devuelve un JSON con el userid del usuario.
+ 
+### Ejemplo real
+Una vez que hicimos login mediante <kbd>http://localhost:6543/login</kbd>, podemos obtener el userid del usuario mediante <kbd>http://localhost:6543/api/v1/userid</kbd>, si el login fue exitoso y hay un usuario con una sesión activa veremos una respuesta como la siguiente
+```json
+{"userid": "convida@unam.social"}
+```
+En caso de que no haya sesión activa, es decir que no se haya hecho login, obtendremos el siguiente mensaje 
+```json
+{"error": "Unauthorized"}
+```
+  
+  
 
 
 
