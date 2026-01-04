@@ -2,7 +2,7 @@
 title: API
 description: API CONVIDA
 published: true
-date: 2026-01-02T19:15:47.790Z
+date: 2026-01-04T01:59:59.966Z
 tags: api
 editor: markdown
 dateCreated: 2025-07-22T01:01:03.085Z
@@ -374,7 +374,7 @@ El endpoint <kbd>@resource(path='/api/v1/node/{node_id}', ...)</kbd> define un r
 ---
 ## Obteniendo la información del usuario en la sesión
 Endpoint <kbd>@resource(path='/api/v1/drones/{userid}', ...)</kbd>
-- Descripción: Devuelve información del usuario autenticado siempre que el userid en la URL 	coincida con el userid de la identidad autenticada en la petición.
+- **Descripción**: Devuelve información del usuario autenticado siempre que el userid en la URL 	coincida con el userid de la identidad autenticada en la petición.
 ### Autenticación y autorización
 - **Autenticación**: Se usa `request.identity` (provista por la configuración de autenticación de la app). Si `request.identity` es false, la respuesta es 401 Unauthorized.
 - **Autorización**: Si `request.matchdict['userid'] != request.identity['userid']`, la respuesta es 403 Forbidden (mismatch de userid). Solo el propio usuario puede consultar su información.
@@ -405,6 +405,98 @@ Recibimos esta respuesta:
 ![userid2.png](/userid2.png)
 > 403 Forbidden — identidad presente pero userid en URL no coincide
 {.is-danger}
+---
+## Recuperación de datos asociados por usuario y nodo
+Endpoint <kbd>@resource(path='/api/v1/sipping/{nodeid}', ...)</kbd>
+- **Descripción**:  Almacena y recupera datos asociados por usuario y nodo (simulación en memoria). Útil para guardar interacciones previas, estadísticas y logros por usuario para un nodo concreto.
+- **Métodos**: 
+	- `GET`: Recupera los datos para el par userid:nodeid.
+  - `POST`: Guarda/reemplaza los datos para el par userid:nodeid con el JSON enviado.
+
+Para hacer las pruebas necesarias con este endpoint, es necesario hacer login, haciendo uso de este endpoint: <kbd>http://localhost:6543/login</kbd>, esto establecerá los tokens tanto de autenticación `(auth_tkt)` y csrf `(csrf_token)`.
+Para poder guardarlos automáticamente en un .txt, llamado `cookies.txt` se puede usar el siguiente comando en terminal `curl.exe -v -c cookies.txt "http://localhost:6543/login"`. Entonces, desde terminal se pueden hacer las pruebas.
+### Comportamiento
+**GET**
+- Busca sipping_data_store[key]
+- Si no existe, devuelve objeto por defecto:
+```json
+{
+"interacciones_previas": [],
+"estadisticas": {},
+"logros": []
+}
+```
+- Devuelve un **200** con ese objeto
+
+**POST**
+- Intenta leer `request.json_body`
+- Si JSON inválido -> responde **400** y 
+```json
+{ "error": "Invalid JSON" }
+```
+- Guarda `sipping_data_store[key]` = payload (sobrescribe si ya existía)
+- Responde **200** con 
+```json
+{ "status": "ok", "saved": payload }
+```
+### Ejemplo de uso
+Podemos crear un archivo .json con la simulación de la estructura esperada y con información cargada, esto para poder mandarlo en el POST. El archivo debe verse de la siguiente manera, cabe mencionar que fue nombrado `payload.json`:
+```json
+{
+  "interacciones_previas": [
+    {
+      "t": "2026-01-03",
+      "score": 10
+    }
+  ],
+  "estadisticas": {
+    "visits": 1
+  },
+  "logros": [
+    "inicio"
+  ]
+}
+```
+posteriormente podemos usar el siguiente comando en terminal, para mandar la información mediante **POST**:
+> 	curl.exe -i -X POST "http://localhost:6543/api/v1/sipping/node-24542b5b-ece1-45fa-975e-6c54744e" `
+>    -H "Content-Type: application/json" `
+>    -H "X-CSRF-Token: 08e8cf80010e455c8a294c56ff5aa446" `
+>    -b cookies.txt `
+>    --data @C:\Users\compa\OneDrive\Escritorio\CONVIDA\honeycomb\payload.json
+{.is-info}
+
+En donde se especifíca el id del nodo al que simularemos cargarle la información, que en este caso es el nodo con el id `node-24542b5b-ece1-45fa-975e-6c54744e` y necesitamos especificar el **csrf** de la sesión que en este caso es **08e8cf80010e455c8a294c56ff5aa446** y la cookie de la sesión será incrustada directamente del archivo `cookies.txt` y finalmente se manda la información que se obtiene del archivo `payload.json` creado anteriormente.
+En la terminal obtendremos una respuesta que se tiene que ver similar a esta:
+>  HTTP/1.1 200 OK
+>  Content-Length: 141
+>  Content-Type: application/json
+>  Date: Sun, 04 Jan 2026 01:41:56 GMT
+>  Server: waitress
+>  X-Content-Type-Options: nosniff
+>  
+>  {"status": "ok", "saved": {"interacciones_previas": [{"t": "2026-01-03", "score": 10}], "estadisticas": {"visits": 1}, "logros": ["inicio"]}}
+{.is-success}
+
+
+Indicando que la información fue enviada correctamente.
+Si acaso hubiera un error en la terminal se vería de esta manera
+> HTTP/1.1 400 Bad Request
+> Content-Length: 25
+> Content-Type: application/json
+> Date: Sun, 04 Jan 2026 01:52:04 GMT
+> Server: waitress
+> X-Content-Type-Options: nosniff
+> 
+> {"error": "Invalid JSON"}
+{.is-danger}
+
+Ahora para verificar la información cargada a dicho nodo mediante **GET**, podemos hacerlo desde el navegador, visitando la siguiente ruta: <kbd>http://localhost:6543/api/v1/sipping/node-24542b5b-ece1-45fa-975e-6c54744e</kbd>, ahí veremos la información previamente enviada el en **POST**. Veremos algo así.
+
+![nodos.png](/nodos.png)
+
+
+
+
 
 
 
