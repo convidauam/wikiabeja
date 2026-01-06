@@ -2,7 +2,7 @@
 title: Gestión de nodos
 description: 
 published: true
-date: 2026-01-06T02:15:59.467Z
+date: 2026-01-06T02:28:40.452Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T01:52:07.514Z
@@ -197,4 +197,12 @@ def test_add_node_with_uuid_key():
   - Se asegura que:
   	- Todas las claves en `__nodes__` son UUIDs válidos.
   	- La arista `conexión-uuid` está presente en el índice global `__edges__`.
+## Ejecución y resultados
+Para poder iniciar con los test debemos ejecutar en terminal el siguiente comando para iniciar nuestro entorno virtual.
+
+<kbd>env\Scripts\activate</kbd>
+
+Una vez que se inició el entorno virtual podemos ejecutar el siguiente comando para probar los test, para este test cree un script con las funciones anteriormente detalladas, el cual fue nombrado <kbd>test_beehive_full.py</kbd>. Ahora ejecutamos el siguiente comando: <kbd>pytest -s .\tests\test_beehive_full.py</kbd>
+
+![test.png](/test.png)
 
