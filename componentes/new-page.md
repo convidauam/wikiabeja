@@ -2,7 +2,7 @@
 title: Gestión de nodos
 description: 
 published: true
-date: 2026-01-06T02:28:40.452Z
+date: 2026-01-06T02:39:52.674Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T01:52:07.514Z
@@ -206,3 +206,35 @@ Una vez que se inició el entorno virtual podemos ejecutar el siguiente comando 
 
 ![test.png](/test.png)
 
+### Explicación
+**Primera prueba: `test_add_and_remove_nodes`**
+- **Antes de eliminar `nodo1`**:
+  - **NODOS**: `['grafo1', 'nodo1']`; El índice global `__nodes__` contiene el grafo grafo1 y el nodo `nodo1`.
+  - **EDGES**: `{'grafo1': ['conexión']}`; El índice global `__edges__` contiene una arista (`conexión`) asociada al grafo grafo1.
+- **Después de eliminar `nodo1`**:
+  - **NODOS**: ['grafo1'];  `nodo1` fue eliminado de __nodes__.
+  - **EDGES**: `{'grafo1': ['conexión']}`; La arista asociada a grafo1 permanece intacta porque `nodo1` no era el origen de la arista.
+- **Antes de eliminar grafo1**:
+  - **NODOS**: `['grafo1', 'nodo1']`;  nodo1 fue agregado nuevamente.
+  - **EDGES**: `{'grafo1': ['conexión']}`, La arista sigue asociada a grafo1.
+- **Después de eliminar grafo1**:
+  - **NODOS**: [] → Todos los nodos (grafo1 y sus hijos) fueron eliminados.
+  - **EDGES**: {} → Todas las aristas relacionadas con grafo1 fueron eliminadas.
+  
+---
+
+**Segunda prueba: `test_add_node_with_uuid_key`**
+- NODOS EN `__nodes__` (UUID):
+  - Se muestra un nodo con una clave UUID (c24629c4-4cc8-4ede-ba46-2a5ce4dea57e) en el índice global `__nodes__`.
+  - El nodo es de tipo `HoneycombGraph`.
+- EDGES EN `__edges__` (UUID):
+  - Se muestra una entrada en `__edges__` con la misma clave UUID.
+  - Contiene una arista con el título conexión-uuid.
+  
+---
+
+**Tercera prueba: `test_sync_graph_edges`**
+- Antes de `sync_graph_edges`:
+	- Aristas: ['A'] → El índice global `__edges__` contiene una arista (A) asociada al grafo g1.
+- Después de `sync_graph_edges`:
+	- Aristas: ['A', 'B'] → Después de sincronizar, el índice global ahora contiene ambas aristas (A y B) del grafo g1.
