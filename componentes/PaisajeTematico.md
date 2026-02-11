@@ -1,8 +1,8 @@
 ---
 title: Paisaje Temático
-description: El componente de paisaje temático se encarga de visualizar y nevegar los cobntenidos de un convida. 
+description: El componente de paisaje temático se encarga de visualizar y nevegar los contenidos de un convida. 
 published: true
-date: 2026-02-11T00:36:04.320Z
+date: 2026-02-11T00:37:35.342Z
 tags: componente, navegación
 editor: markdown
 dateCreated: 2026-02-11T00:36:04.320Z
