@@ -2,7 +2,7 @@
 title: Paisaje Temático
 description: El componente de paisaje temático se encarga de visualizar y nevegar los contenidos de un convida. 
 published: true
-date: 2026-02-11T00:37:35.342Z
+date: 2026-02-11T03:11:32.269Z
 tags: componente, navegación
 editor: markdown
 dateCreated: 2026-02-11T00:36:04.320Z
@@ -19,7 +19,7 @@ Se desarrolla actualmente en https://github.com/AstroAmoeba/FlightpathPixi
 
 ![FlightpathDemo-ezgif com-optimize](https://github.com/user-attachments/assets/f4682be2-8059-4814-8572-432ac6e9d51c)
 
----
+
 
 ## Features
 
@@ -27,6 +27,62 @@ Se desarrolla actualmente en https://github.com/AstroAmoeba/FlightpathPixi
   
 - **Niveles o contenidos educativos**: En la carpeta `public/pages/levels/` hay varios niveles o secciones temáticas sobre distintos aspectos del mundo de las abejas (organización, reproductivo, vuelo, diversidad, agricultura, etc.).
 - **[A implementar] Soporte para rutas múltiples y aprendizaje progresivo**: El usuario puede navegar entre los distintos temas/niveles siguiendo rutas generadas a partir de parámetros dados, de manera que la navegación entre contenidos sea personalizada. Existen elementos de progresión en las rutas.
+
+
+---
+##  Lógica de nodos
+
+Existen dos tipos de nodos, de tipo "**Level**" (representados por rectangulos de pasto verde) o "**Connector**" (representaddos por rectangulos de tierra) . Los nodos tipo Level son aquellos con contenido asociado, mientras que los connector funcionan como espaciadores para realizar las conexiones entre nodos tipo level respetando la topología del grafo original y permitiendo el correcto desplazamiento del usuario. 
+
+Las conexiones entre cualquier tipo de nodo son **edges** y se representan con un camino de tierra mas estrecho que un nodo tipo connector. Estas conexiones deben de ser bidireccionales para el correcto movimiento entre nodos. 
+
+### Algoritmo para Extraer Mini-Mapas 
+
+Este algoritmo, basado en BFS, permite partir de un nodo de tipo **level** para identificar todos los nodos tipo **level** que están inmediatamente conectados a él o que están conectados exclusivamente a través de nodos tipo **connector**.  
+Cuando se alcanza un nodo tipo **level** distinto al inicial, la exploración se detiene y ya no se continúa expandiendo a partir de ese nodo.
+
+**Entradas:**
+- Lista de nodos del grafo
+- ID del nodo inicial (de tipo 'level')
+
+**Salidas:**
+- Lista de nodos level alcanzados (con título/id/camino)
+- Subgrafo: nodos y conexiones necesarios para representar los caminos encontrados
+
+Se puede consultar el código (Python) en: [`BFS test/MinimapGenerator.py`](https://github.com/AstroAmoeba/Flightpath_minimap_gen/blob/main/BFS%20test/MinimapGenerator.py)
+
+#### Ejemplo:
+
+Nodo de inicio: Obreras
+
+<img width="779" height="736" alt="image" src="https://github.com/user-attachments/assets/d4a1bbcf-6028-45ce-be9c-9724a9254b89" />
+
+**Conexiones:**
+
+Directas:
+
+- Colonización (ID 134) -> Camino: [131, 134] 
+
+- Radionovela (ID 136) -> Camino: [131, 136] 
+
+Mediante nodos connector: 
+
+- Feromonas (ID 133) -> Camino: [131, 130, 133]
+
+- Limpiadoras (ID 138) -> Camino: [131, 149, 138]
+
+- Organización (ID 125) -> Camino: [131, 130, 126, 125]
+
+- Forrajera (ID 200) -> Camino: [131, 149, 139, 200]
+
+- Nodriza (ID 202) -> Camino: [131, 149, 139, 201, 202]
+
+- Guardiana (ID 203) -> Camino: [131, 149, 139, 201, 203]
+
+**Minimapa:**
+
+<img width="489" height="323" alt="image" src="https://github.com/user-attachments/assets/c2126610-cfa5-4d50-ad1d-58351e1d2a27" />
+
 
 ---
 
