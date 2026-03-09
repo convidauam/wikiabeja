@@ -2,7 +2,7 @@
 title: Editor CONVIDA
 description: Pagina principal del editor convida
 published: true
-date: 2025-10-01T00:16:28.540Z
+date: 2026-03-09T04:23:10.605Z
 tags: editor
 editor: ckeditor
 dateCreated: 2025-03-26T02:14:46.829Z
@@ -12,23 +12,31 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <p>El Editor Convida es un componente de la Plataforma Convida que permitirá a quien lo utilice describir la estructura temática y teórica de un cierto campo de saberes a través de un lenguaje visual consistente en elementos simbólicos e icónicos. Su objetivo, además de generar una representación gráfica de las estructuras teóricas, es incorporar restricciones provenientes tanto de la lógica y la teoría de conjuntos, como de la filosofía de las ciencias, a fin de fomentar la generación de estructuras con significado y que puedan ser útiles tanto para la enseñanza, como para la reflexión teórica.</p>
 <p>Para lograr estos objetivos, el Editor Convida dispondrá de tres distintos modos de operación:</p>
 <ul>
-  <li>Modo de editor gráfico<ul>
+  <li><strong>Modo de editor gráfico</strong>
+    <ul>
       <li>Permite crear y modificar la estructura temática de un Convida, o Contexto virtual de aprendizaje, a través de una interfaz gráfica basada en nodos y conexiones entre esos nodos.</li>
     </ul>
   </li>
-  <li>Modo de visualización<ul>
+  <li><strong>Modo de visualización</strong>
+    <ul>
       <li>Permite al usuario visualizar la estructura temática de una cierta región o módulo de un Convida, así como explorar otras regiones y acceder a los contenidos temáticos.</li>
     </ul>
   </li>
-  <li>Modo interactivo<ul>
+  <li><strong>Modo interactivo</strong>
+    <ul>
       <li>Permite a lxs usuarixs interactuar con una estructura temática o teórica a fin de poner a prueba sus conocimientos, tanto de un cierto contenido temático, como del tipo de estructuras representadas en la plataforma.</li>
     </ul>
   </li>
 </ul>
 <p>&nbsp;</p>
-<h3>Editor gráfico</h3>
-<p>Se propone la creación de un programa, alojado en el navegador, que permita al usuario generar diagramas, tales como las representaciones gráficas propuestas, en un entorno visual. Este navegador podrá ser desarrollado en Godot Engine o en alguna otra plataforma.&nbsp;</p>
-<p>Se plantea de momento el desarrollo de este programa mediante el uso de <a href="https://reactflow.dev/">React Flow</a>, &nbsp;una biblioteca diseñada para la construcción de aplicaciones basadas en nodos. <sup>1</sup> React Flow es a su vez, un componente modificable de <a href="https://react.dev/">React.js</a> ,otra biblioteca Javascript. Es requerido como base para emplear estas bibliotecas el uso de <a href="https://nodejs.org/es">Node.js</a>, un entorno de ejecución de JavaScript multiplataforma.&nbsp;</p>
+<h2>Editor gráfico</h2>
+<p>Se propone la creación de un programa, alojado en el navegador, que permita al usuario generar diagramas, tales como las representaciones gráficas propuestas, en un entorno visual.&nbsp;</p>
+<figure class="image"><img src="/imagenes_editor/editor_mapatematico.png">
+  <figcaption>Mapa temático del CONVIDA abejas visto en el Editor.</figcaption>
+</figure>
+<p>&nbsp;</p>
+<h4>Stack</h4>
+<p>Se plantea &nbsp;el desarrollo de este programa mediante el uso de <a href="https://reactflow.dev/">React Flow</a>, &nbsp;una biblioteca diseñada para la construcción de aplicaciones basadas en nodos.<sup>1</sup> React Flow es a su vez, un componente modificable de <a href="https://react.dev/">React.js</a> , otra biblioteca Javascript. Es requerido como base para emplear estas bibliotecas el uso de <a href="https://nodejs.org/es">Node.js</a>, un entorno de ejecución de JavaScript multiplataforma.&nbsp;</p>
 <p>Adicionalmente, para el desarrollo de este editor se emplea el editor de código fuente <a href="https://code.visualstudio.com/ ">Visual Studio Code</a> y el servidor de desarrollo local <a href="https://vite.dev/">Vite</a>.&nbsp;</p>
 <figure class="image image_resized" style="width:48.78%;"><img src="/dragramaseditorjs.png">
   <figcaption>Diagrama de dependencia del software propuesto.</figcaption>
@@ -44,7 +52,7 @@ dateCreated: 2025-03-26T02:14:46.829Z
   <li><strong>npm</strong> (gestor de paquetes de Node.js)</li>
 </ul>
 <p>&nbsp;</p>
-<h4>Configuración en Visual Studio Code</h4>
+<h5>Configuración en Visual Studio Code</h5>
 <p>Requisitos previos:</p>
 <ul>
   <li>Tener instalado <a href="https://git-scm.com/downloads">Git</a></li>
@@ -53,31 +61,32 @@ dateCreated: 2025-03-26T02:14:46.829Z
 </ul>
 <p>&nbsp;</p>
 <p>Posteriormente, se crea importa el repositorio desde Github usando la terminal integrada de VsCode</p>
-<p><code>git clone https://github.com/CONVIDA/Editor.git</code></p>
+<p><code>git clone https://github.com/CONVIDA/Editor_V2.git</code></p>
 <p>Se navega a la carpeta del proyecto en la terminal con:</p>
 <p><code>cd EditorJSv2</code></p>
 <p>Se instalan las dependecias necesarias con:</p>
 <p><code>npm install</code></p>
 <p>Y se ejecuta la el siguiente comando para ejecutar la aplicación en modo desarrollo y normalmente abrirá tu navegador en un localhost como <a href="http://localhost:3000">http://localhost:3000</a></p>
 <p><code>npm start</code></p>
-<p>Para terminar el poroceso se presiona<code> Crt+C</code> en la terminal y <code>Y</code></p>
-<p>&nbsp;</p>
-<p>Algunas de las funciones que presenta actualmente el editor gráfico son:</p>
-<p>&nbsp;</p>
-<figure class="image image_resized" style="width:45.43%;"><img src="/nodosyligas.gif.gif">
-  <figcaption>Conectar y mover nodos</figcaption>
+<p>Para terminar el pooceso se presiona<code> Crt+C</code> en la terminal y <code>Y</code></p>
+<h3>Funcionalidades</h3>
+<figure class="image"><img src="/imagenes_editor/editor_funciones1.gif">
+  <figcaption>Creación, modificación y conexión de dos nodos con una linea con rótulo.&nbsp;</figcaption>
 </figure>
-<p>&nbsp;</p>
-<figure class="image image_resized" style="width:45.39%;"><img src="/guardadoeditor.gif">
-  <figcaption>Guardado del diagrama muestra en fomato png y json</figcaption>
+<figure class="image"><img src="/imagenes_editor/editor_funciones_2.gif">
+  <figcaption>Funciones de exportación (png, json y svg) y función para importar diagramas (json)&nbsp;</figcaption>
 </figure>
-<h2>Funcionalidades</h2>
+<figure class="image image_resized" style="width:86.41%;"><img src="/imagenes_editor/iconos_abejas.png">
+  <figcaption>Diagrama de libado, se muestran nodos con imágenes.</figcaption>
+</figure>
 <p>Las funcionalidades actuales del editor gráfico son:</p>
 <ul>
   <li>Crear nodos, editar su color y texto</li>
-  <li>Crear conexiones entre nodos, editar su aspectyo y añadir etiquetas.</li>
-  <li>Exportar los diagramas en archivos json, png y svg</li>
-  <li>Conexiones con las anclas laterales de los nodos</li>
+  <li>Crear conexiones entre nodos, editar su aspecto y añadir etiquetas.</li>
+  <li>Exportar los diagramas en archivos json, png y svg.</li>
+  <li>Conexiones con las anclas de los nodos</li>
+  <li>Cargar nodos con imágenes.</li>
+  <li>Minimapa y funciones de navegación entre diagramas.&nbsp;</li>
   <li>Función de importar y leer archivos json<ul>
       <li>(codificar cada imagen con nombre)</li>
     </ul>
@@ -85,15 +94,14 @@ dateCreated: 2025-03-26T02:14:46.829Z
 </ul>
 <p>A implementar:</p>
 <ul>
-  <li>Aspecto de flecha (direccional) para las conexiones</li>
-  <li>Posibles tipos de nodo</li>
+  <li>Aspecto de flecha (direccional) para las conexiones.</li>
+  <li>Tipos de nodo</li>
   <li>Nodos- imagen<ul>
       <li>Banco de iconos, con barra lateral para importarlos.</li>
     </ul>
   </li>
 </ul>
-<h2>Arquitectura</h2>
-<p>&nbsp;</p>
+<h3>Arquitectura</h3>
 <h4>1.Estructura de Carpetas</h4>
 <p><strong>src/</strong></p>
 <p>&nbsp;Carpeta principal con todo el código fuente:</p>
@@ -129,16 +137,15 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <p>&nbsp; &nbsp; &nbsp;JSON: Serializa el estado actual del diagrama y lo descarga como archivo local.</p>
 <p>&nbsp; &nbsp; &nbsp; PNG/SVG: Captura la imagen del diagrama y la descarga usando utilidades como `html-to-image`.</p>
 <p>&nbsp;</p>
-<h4>3. **Misceláneo**</h4>
-<p><strong>- **Estilo y Temas:** &nbsp;</strong></p>
+<h4>3. Misceláneo</h4>
+<p><strong>- Estilo y Temas:</strong></p>
 <p>&nbsp;Utiliza Material UI y un tema oscuro personalizado.</p>
-<p><strong>- **Gestión de IDs:** &nbsp;</strong></p>
+<p><strong>- Gestión de IDs: &nbsp;</strong></p>
 <p>&nbsp;Los nodos y edges tienen IDs generados única y automáticamente con utilidades propias.</p>
-<p><strong>- **Extensibilidad:** &nbsp;</strong></p>
+<p><strong>- Extensibilidad: &nbsp;</strong></p>
 <p>&nbsp;El código está modularizado para permitir agregar más temas, tipos de nodos, funcionalidad de exportación, etc.</p>
 <hr>
-<p>&nbsp;</p>
-<h2>Para comunicación con Backend:</h2>
+<h3>Comunicación con Backend:</h3>
 <p>&nbsp;</p>
 <h4><strong>Función de importación y lectura de los JSON:</strong></h4>
 <p>&nbsp;</p>
@@ -162,8 +169,7 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <p>&nbsp;</p>
 <h4><strong>Función de exportación de JSON:</strong></h4>
 <p><strong>Funcion de exportación de JSON:</strong> Se llama <code><strong>exportToJson</strong></code> y se encuentra en:</p>
-<pre><code class="language-plaintext">src/utils/export.ts
-</code></pre>
+<pre><code class="language-plaintext">src/utils/export.ts</code></pre>
 <p>Funcionamiento general</p>
 <p>La función <code>exportToJson</code> recibe dos parámetros:</p>
 <p>Una instancia de React Flow (<code>reactFlowInstance</code>), que contiene el estado actual del diagrama.</p>
@@ -173,6 +179,13 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <p><strong>Prepara la descarga:</strong> Crea un elemento <code>&lt;a&gt;</code> (enlace) temporal, configura su atributo <code>href</code> con el contenido JSON codificado y <code>download</code> con el nombre de archivo.</p>
 <p><strong>Dispara la descarga:</strong> Añade el enlace al DOM, simula un clic y luego lo elimina, logrando que el navegador descargue el archivo JSON.</p>
 <p>En la Interfaz: en el componente de la barra de herramientas (<code>src/components/Toolbar/Toolbar.tsx</code>), hay un botón llamado "Exportar JSON".<br>Cuando el usuario hace clic en ese botón, se llama a un handler como <code>handleExportJson</code>, que a su vez invoca la función <code>exportToJson</code> pasando la instancia actual del diagrama.</p>
+<p>&nbsp;</p>
+<h2><strong>Modo de visualización</strong></h2>
+<p>Permite al usuario visualizar la estructura temática de una cierta región o módulo de un CONVIDA, así como explorar otras regiones y acceder a los contenidos temáticos. Actualmente se desarrolla como el <a href="https://wikiabeja.apuntia.com/es/componentes/PaisajeTematico">componente paisaje temático</a>. Recupera la estructura de nodos del editor gráfico para generar mapas en un estilo de videojuego usando <strong>Pixi.js.</strong></p>
+<p>&nbsp;</p>
+<h2><strong>Modo interactivo</strong></h2>
+<p>Permite a lxs usuarixs interactuar con una estructura temática o teórica a fin de poner a prueba sus conocimientos, tanto de un cierto contenido temático, como del tipo de estructuras representadas en la plataforma.</p>
+<p>Actualmente se desarrollan componentes interactivos en <strong>Pixi.js</strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2>Bibliografía</h2>
