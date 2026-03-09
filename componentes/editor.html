@@ -2,7 +2,7 @@
 title: Editor CONVIDA
 description: Pagina principal del editor convida
 published: true
-date: 2026-03-09T04:24:25.300Z
+date: 2026-03-09T04:46:08.268Z
 tags: editor
 editor: ckeditor
 dateCreated: 2025-03-26T02:14:46.829Z
@@ -101,6 +101,26 @@ dateCreated: 2025-03-26T02:14:46.829Z
     </ul>
   </li>
 </ul>
+<p>&nbsp;</p>
+<h3>Lógica de nodos y edges.&nbsp;</h3>
+<p>Cada diagrama o grafo esta construido por nodos y edges, siendo los nodos aquellos representados por rectángulos con texto, imágenes u otro tipo de contenido y los edges las lineas que unen a los nodos. Estos dos elementos tienen cada uno una serie de atributos y se modifican de diferentes formas:</p>
+<p><strong>Edges</strong></p>
+<p>Tienen asociados un id único, nodo source, nodo target, sourceHandle (ancla del nodo fuente), targetHandle (ancla del nodo target), estilo y label.&nbsp;</p>
+<p><strong>Nodos</strong></p>
+<p>Tienen asociados un id único, label, color y posición. A desarrollar: tipo de nodo.&nbsp;</p>
+<p><strong>Tipos de nodos disponibles:</strong></p>
+<ul>
+  <li>Conector</li>
+  <li>Texto simple</li>
+  <li>Texto enriquecido</li>
+  <li>Imágenes</li>
+  <li>Animación</li>
+  <li>Página web</li>
+  <li>Interactivos</li>
+</ul>
+<figure class="image image_resized" style="width:33.67%;"><img src="/imagenes_editor/abc.png">
+  <figcaption>Grafo con dos nodos “A” y “B” conectados por el edge “c”</figcaption>
+</figure>
 <h3>Arquitectura</h3>
 <h4>1.Estructura de Carpetas</h4>
 <p><strong>src/</strong></p>
