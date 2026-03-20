@@ -2,7 +2,7 @@
 title: Interactivos PixiJS
 description: 
 published: true
-date: 2026-03-05T21:10:59.528Z
+date: 2026-03-20T04:43:59.579Z
 tags: pixijs
 editor: ckeditor
 dateCreated: 2026-02-15T02:21:23.492Z
@@ -11,16 +11,55 @@ dateCreated: 2026-02-15T02:21:23.492Z
 <p>Además de los videojuegos desarrollados en Unity, el proyecto Convida contempla el desarrollo de juegos o actividades más sencillas que serán creados usando el grafo de escena PixiJS.</p>
 <p>Los juegos o tipos de actividades contemplados hasta ahora son los siguientes:</p>
 <ul>
-  <li>Combinabeja (Ruleta generador de avatar): &nbsp;Mini-juego interactivo donde el usuario genera un avatar único y aleatorio. El sistema utiliza un mecanismo de ruleta basado en diversas especies de abejas dando como resultado un avatar unico con estilo pixel art</li>
+  <li>Combinabeja (Tragamonedas generador de avatar): &nbsp;Mini-juego interactivo donde el usuario genera un avatar único y aleatorio. El sistema utiliza un mecanismo de tragamonedas basado en diversas especies de abejas dando como resultado un avatar unico con estilo pixel art</li>
 </ul>
 <h2>Arquitectura de los interactivos PixiJS</h2>
 <p>Para el desarrollo de la "Ruleta de Abejas", se ha implementado una estructura basada en PixiJS, organizada de la siguiente manera:</p>
+<p>ROLETA-ABEJAS/</p>
+<p>├── node_modules/</p>
+<p>├── public/</p>
+<p>│ &nbsp; ├── especies/</p>
+<p>│ &nbsp; │ &nbsp; ├── nombre de la especie /</p>
+<p>│ &nbsp; │ &nbsp; │ &nbsp; ├── Cabeza.png</p>
+<p>│ &nbsp; │ &nbsp; │ &nbsp; ├── Tórax.png</p>
+<p>│ &nbsp; │ &nbsp; │ &nbsp; ├── Abdomen.png</p>
+<p>├── src/</p>
+<p>│ &nbsp; ├── controllers/</p>
+<p>│ &nbsp; │ &nbsp; └── slotController.js</p>
+<p>│ &nbsp; ├── core/</p>
+<p>│ &nbsp; │ &nbsp; └── game.js</p>
+<p>│ &nbsp; ├── models/</p>
+<p>│ &nbsp; │ &nbsp; ├── beeGenome.js</p>
+<p>│ &nbsp; │ &nbsp; ├── beeModel.js</p>
+<p>│ &nbsp; │ &nbsp; └── beePart.js</p>
+<p>│ &nbsp; ├── utils/</p>
+<p>│ &nbsp; │ &nbsp; ├── counter.js</p>
+<p>│ &nbsp; │ &nbsp; ├── imageGenerator.js</p>
+<p>│ &nbsp; │ &nbsp; └── seededRandom.js</p>
+<p>│ &nbsp; └── views/</p>
+<p>│ &nbsp; &nbsp; &nbsp; ├── avatarView.js</p>
+<p>│ &nbsp; &nbsp; &nbsp; ├── beeBuilder.js</p>
+<p>│ &nbsp; &nbsp; &nbsp; ├── slotView.js</p>
+<p>│ &nbsp; &nbsp; &nbsp; └── uiLever.js</p>
+<p>├── javascript.svg</p>
+<p>├── main.js</p>
+<p>├── style.css</p>
+<p>├── test-vite.html</p>
+<p>├── .gitignore</p>
+<p>├── index.html</p>
+<p>├── package-lock.json</p>
+<p>├── package.json</p>
+<p>└── vite.config.js</p>
+<p>&nbsp;</p>
 <ul>
-  <li>src/models/ : Contiene la logica de datos en beeModel.js</li>
-  <li>src/vievs/: Maneja la representación visual en &nbsp;uiButton.js, wheelView.js y avatarView.js&nbsp;</li>
-  <li>src/controllers/: Gestiona la lógica de interacción en weelController.js</li>
+  <li>public/especies: Contiene las imagenes&nbsp;</li>
+  <li>src/models/ : Contiene la logica de los datos</li>
+  <li>src/vievs/: Maneja la representación visual de la interfaz, como se ve el avatar y el tragamonedas</li>
+  <li>src/controllers/: Gestiona la lógica de interacción en slotController.js</li>
   <li>src/utils/: Funciones de apoyo para asegurar variaciones aleatorias controladas como seededRandom.js y counter.js</li>
 </ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <h2>Plantillas disponibles</h2>
 <p>Para facilitar la creación de nuevas actividades basadas en esta tecnología, ponemos a tu disposición las siguientes plantillas:</p>
 <ul>
