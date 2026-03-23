@@ -2,7 +2,7 @@
 title: Paisaje Temático
 description: El componente de paisaje temático se encarga de visualizar y nevegar los contenidos de un convida. 
 published: true
-date: 2026-02-11T03:11:32.269Z
+date: 2026-03-23T08:54:14.080Z
 tags: componente, navegación
 editor: markdown
 dateCreated: 2026-02-11T00:36:04.320Z
@@ -32,7 +32,7 @@ Se desarrolla actualmente en https://github.com/AstroAmoeba/FlightpathPixi
 ---
 ##  Lógica de nodos
 
-Existen dos tipos de nodos, de tipo "**Level**" (representados por rectangulos de pasto verde) o "**Connector**" (representaddos por rectangulos de tierra) . Los nodos tipo Level son aquellos con contenido asociado, mientras que los connector funcionan como espaciadores para realizar las conexiones entre nodos tipo level respetando la topología del grafo original y permitiendo el correcto desplazamiento del usuario. 
+Existen dos tipos de nodos, de tipo "**Level**" (representados por rectangulos de pasto verde) o "**Connector**" (representados por rectangulos de tierra) . Los nodos tipo Level son aquellos con contenido asociado, mientras que los connector funcionan como espaciadores para realizar las conexiones entre nodos tipo level respetando la topología del grafo original y permitiendo el correcto desplazamiento del usuario. 
 
 Las conexiones entre cualquier tipo de nodo son **edges** y se representan con un camino de tierra mas estrecho que un nodo tipo connector. Estas conexiones deben de ser bidireccionales para el correcto movimiento entre nodos. 
 
