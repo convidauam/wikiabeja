@@ -2,7 +2,7 @@
 title: Editor CONVIDA
 description: Pagina principal del editor convida
 published: true
-date: 2026-03-14T09:23:23.364Z
+date: 2026-03-25T02:46:36.981Z
 tags: editor
 editor: ckeditor
 dateCreated: 2025-03-26T02:14:46.829Z
@@ -104,24 +104,65 @@ dateCreated: 2025-03-26T02:14:46.829Z
 <p>&nbsp;</p>
 <h3>Lógica de nodos y edges.&nbsp;</h3>
 <p>Cada diagrama o grafo esta construido por nodos y edges, siendo los nodos aquellos representados por rectángulos con texto, imágenes u otro tipo de contenido y los edges las lineas que unen a los nodos. Estos dos elementos tienen cada uno una serie de atributos y se modifican de diferentes formas:</p>
+<figure class="image image_resized" style="width:33.67%;"><img src="/imagenes_editor/abc.png">
+  <figcaption>Grafo con dos nodos “A” y “B” conectados por el edge “c”</figcaption>
+</figure>
 <p><strong>Edges</strong></p>
 <p>Tienen asociados un id único, nodo source, nodo target, sourceHandle (ancla del nodo fuente), targetHandle (ancla del nodo target), estilo y label.&nbsp;</p>
 <p><strong>Nodos</strong></p>
 <p>Tienen asociados un id único, label, color y posición. A desarrollar: tipo de nodo.&nbsp;</p>
 <p><strong>Tipos de nodos disponibles:</strong></p>
-<ul>
-  <li>Conector</li>
-  <li>Texto simple</li>
-  <li>Texto enriquecido</li>
-  <li>Imágenes</li>
-  <li>Animación</li>
-  <li>Página web</li>
-  <li>Interactivos</li>
-  <li>Audio (?</li>
-  <li>Audiovisual {?</li>
-</ul>
-<figure class="image image_resized" style="width:33.67%;"><img src="/imagenes_editor/abc.png">
-  <figcaption>Grafo con dos nodos “A” y “B” conectados por el edge “c”</figcaption>
+<p>Los diagramas se almacenan en archivos json que tienen información sobre los tipos de nodos. Por ejemplo:</p>
+<p><code>"type": "pagina_web"</code></p>
+<p>Los diferentes tipos de nodo son:</p>
+<figure class="table">
+  <table>
+    <tbody>
+      <tr>
+        <td>Conector</td>
+        <td><code>"type": "conector"</code></td>
+      </tr>
+      <tr>
+        <td>Imágenes</td>
+        <td><code>"type": "imagenes"</code></td>
+      </tr>
+      <tr>
+        <td>Página Web</td>
+        <td><code>"type": "pagina_web"</code></td>
+      </tr>
+      <tr>
+        <td>Texto Simple</td>
+        <td><code>"type": "texto_simple"</code></td>
+      </tr>
+      <tr>
+        <td>Interactivos</td>
+        <td><code>"type": "interactivos"</code></td>
+      </tr>
+      <tr>
+        <td>Texto enriquecido</td>
+        <td><code>"type": "texto_enriquecido"</code></td>
+      </tr>
+      <tr>
+        <td>Animación</td>
+        <td><code>"type": "animacion"</code></td>
+      </tr>
+      <tr>
+        <td>Audio</td>
+        <td><code>"type": "audio"</code></td>
+      </tr>
+      <tr>
+        <td>Audiovisual</td>
+        <td><code>"type": "audiovisual"</code></td>
+      </tr>
+      <tr>
+        <td>Custom / Latex</td>
+        <td><code>"type": "custom"</code></td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<figure class="image image_resized" style="width:77.59%;"><img src="/imagenes_editor/tipos_de_nodos.png">
+  <figcaption>Aspecto de cada tipo de nodo.</figcaption>
 </figure>
 <h3>Arquitectura</h3>
 <h4>1.Estructura de Carpetas</h4>
