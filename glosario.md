@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2026-05-22T16:07:11.479Z
+date: 2026-05-22T16:24:02.284Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -20,7 +20,7 @@ Conjunto de contenidos interconectados temáticamente orientados hacia la explor
 
 ### Coordenadas
 
-Un atributo que resultad de la calificación de cada nodo de un [Convida](#convida) en función de las habilidades que promueve.
+Un atributo que resultad de la calificación de cada nodo de un [Convida](#convida) en función de las habilidades que promueve, lo que permite modelar el aprendizaje de las personas usuarias.
 
 # D
 
@@ -28,6 +28,7 @@ Un atributo que resultad de la calificación de cada nodo de un [Convida](#convi
 
 ### Editor Convida
 
+Interfaz gráfica que facilita la edición del [paisaje temático](#paisaje-temático) mediante la inclusión de nuevos nodos, la modificación de nodos existentes, la manipulación de las conexiones entre los nodos, así como la definición de aspectos que modelan el aprendizaje en función de los atributos de cada nodo en términos de las capacidades que fomentan.
 
 # F
 
@@ -50,7 +51,7 @@ Un atributo que resultad de la calificación de cada nodo de un [Convida](#convi
 
 ### Mapa interactivo
 
-Es el mapa bidimensional que presenta a la persona usuaria los nodos del [paisaje temático](#paisaje-temtico) más cercanos en función de su trayectoria de aprendizaje y de sus intereses, de manera que pueda acceder a los contenidos y enfrentar superar los retos que se le plantean a fin de tener acceso a más contenidos.
+Es el mapa bidimensional que presenta a la persona usuaria los nodos del [paisaje temático](#paisaje-temático) más cercanos en función de su trayectoria de aprendizaje y de sus intereses, de manera que pueda acceder a los contenidos y enfrentar superar los retos que se le plantean a fin de tener acceso a más contenidos.
 
 # N
 
