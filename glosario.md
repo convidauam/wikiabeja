@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2025-11-29T18:06:40.308Z
+date: 2026-05-22T16:00:26.846Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -50,6 +50,8 @@ Un atributo que resultad de la calificación de cada nodo de un [Convida](#convi
 
 ### Mapa interactivo
 
+
+
 # N
 
 # O
@@ -62,7 +64,7 @@ Red de contenidos de un [Convida](#convida) organizados temáticamente a la mane
 
 ### Plataforma Convida
  
-Plataforma web interactiva que alberga los contenidos temáticos, los organiza mediante un grafo interactivo y facilita la exploración de los contenidos por medio del [mapa interactivo](#mapa-interactivo).
+Plataforma web interactiva que alberga los contenidos temáticos, los organiza mediante un grafo dinámico en función del aprendizaje y los intereses de la persona usuaria, además de que facilita la exploración de los contenidos por medio de un [mapa interactivo](#mapa-interactivo).
 
 # Q
 
