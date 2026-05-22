@@ -2,7 +2,7 @@
 title: Glosario
 description: 
 published: true
-date: 2026-05-22T16:00:26.846Z
+date: 2026-05-22T16:07:11.479Z
 tags: 
 editor: markdown
 dateCreated: 2025-11-28T20:41:06.777Z
@@ -50,7 +50,7 @@ Un atributo que resultad de la calificación de cada nodo de un [Convida](#convi
 
 ### Mapa interactivo
 
-
+Es el mapa bidimensional que presenta a la persona usuaria los nodos del [paisaje temático](#paisaje-temtico) más cercanos en función de su trayectoria de aprendizaje y de sus intereses, de manera que pueda acceder a los contenidos y enfrentar superar los retos que se le plantean a fin de tener acceso a más contenidos.
 
 # N
 
@@ -60,7 +60,7 @@ Un atributo que resultad de la calificación de cada nodo de un [Convida](#convi
 
 ### Paisaje temático
 
-Red de contenidos de un [Convida](#convida) organizados temáticamente a la manera de nodos interconectados en donde la posición de cada uno se determina en función de sus conexiones y de sus [coordenadas](#coordenadas), de manera que nodos cercanos entre sí deberían promover habilidades relacionadas y debería poder accederse a ellos a través de sus conexiones con otros nodos cercanos.
+Grafo dinámico formado por los contenidos de un [Convida](#convida) organizados temáticamente a la manera de nodos interconectados, en donde la posición de cada uno se determina en función de sus conexiones y de sus [coordenadas](#coordenadas), de manera que nodos cercanos entre sí promueven habilidades relacionadas y es posible acceder a ellos a través de sus conexiones con otros nodos cercanos.
 
 ### Plataforma Convida
  
