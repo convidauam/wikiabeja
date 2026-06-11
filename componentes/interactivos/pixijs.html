@@ -2,7 +2,7 @@
 title: Interactivos PixiJS
 description: 
 published: true
-date: 2026-06-11T20:42:07.559Z
+date: 2026-06-11T20:58:59.503Z
 tags: pixijs
 editor: ckeditor
 dateCreated: 2026-02-15T02:21:23.492Z
@@ -25,54 +25,39 @@ dateCreated: 2026-02-15T02:21:23.492Z
   <li>Exportación de un zip para tener el combinador con los ajustes finales</li>
   <li>Compatible en version movil y de escritorio</li>
 </ul>
-<h2>Arquitectura de los interactivos PixiJS</h2>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>Para el desarrollo de la "Ruleta de Abejas", se ha implementado una estructura basada en PixiJS, organizada de la siguiente manera:</p>
-<p>├── node_modules/</p>
-<p>├── public/</p>
-<p>│ &nbsp; ├── especies/</p>
-<p>│ &nbsp; │ &nbsp; ├── nombre de la especie /</p>
-<p>│ &nbsp; │ &nbsp; │ &nbsp; ├── Cabeza.png</p>
-<p>│ &nbsp; │ &nbsp; │ &nbsp; ├── Tórax.png</p>
-<p>│ &nbsp; │ &nbsp; │ &nbsp; ├── Abdomen.png</p>
+<h2>Arquitectura del combinador</h2>
+<p>Para el desarrollo del “CombinaTodo" &nbsp;se ha implementado una estructura basada en PixiJS, organizada de la siguiente manera:</p>
 <p>├── src/</p>
-<p>│ &nbsp; ├── controllers/</p>
-<p>│ &nbsp; │ &nbsp; └── slotController.js</p>
-<p>│ &nbsp; ├── core/</p>
-<p>│ &nbsp; │ &nbsp; └── game.js</p>
-<p>│ &nbsp; ├── models/</p>
-<p>│ &nbsp; │ &nbsp; ├── beeGenome.js</p>
-<p>│ &nbsp; │ &nbsp; ├── beeModel.js</p>
-<p>│ &nbsp; │ &nbsp; └── beePart.js</p>
+<p>│ &nbsp; ├── core/ &nbsp;</p>
+<p>│ &nbsp; │ &nbsp; └── game.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;# Controlador principal</p>
+<p>│ &nbsp; │ &nbsp; └── CombinaGenerator.js &nbsp; &nbsp; &nbsp; &nbsp; # Orquestador</p>
+<p>│ &nbsp; │ &nbsp; └── CombinaUI.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;# Interfaz visual</p>
+<p>│ &nbsp; │ &nbsp; └── CombinaSpin.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #Logica de los giros</p>
+<p>│ &nbsp; │ &nbsp; └── CombinaExport.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Exportador</p>
+<p>│ &nbsp; │ &nbsp; └── ConfigManager.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Guarda y carga la configuracion</p>
+<p>│ &nbsp; │ &nbsp; └── AssetLoader.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Carga asincrona imagenes</p>
 <p>│ &nbsp; ├── utils/</p>
-<p>│ &nbsp; │ &nbsp; ├── counter.js</p>
-<p>│ &nbsp; │ &nbsp; ├── imageGenerator.js</p>
-<p>│ &nbsp; │ &nbsp; └── seededRandom.js</p>
+<p>│ &nbsp; │ &nbsp; ├── imageLoader.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Cargador optimizado de &nbsp;imagenes &nbsp;&nbsp;</p>
+<p>│ &nbsp; │ &nbsp; └── seededRandom.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;# Generador de aleatorio</p>
 <p>│ &nbsp; └── views/</p>
-<p>│ &nbsp; &nbsp; &nbsp; ├── avatarView.js</p>
-<p>│ &nbsp; &nbsp; &nbsp; ├── beeBuilder.js</p>
-<p>│ &nbsp; &nbsp; &nbsp; ├── slotView.js</p>
-<p>│ &nbsp; &nbsp; &nbsp; └── uiLever.js</p>
-<p>├── javascript.svg</p>
-<p>├── main.js</p>
-<p>├── style.css</p>
-<p>├── test-vite.html</p>
-<p>├── .gitignore</p>
+<p>│ &nbsp; &nbsp; &nbsp; ├── AvatarAdjuster.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Editor de avatar</p>
+<p>│ &nbsp; &nbsp; &nbsp; ├── DynamicSlotViewr.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Vista de los slots</p>
+<p>│ &nbsp; &nbsp; &nbsp; └── uiLever.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Palanca</p>
+<p>├── main.js &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;# Punto de entrada</p>
+<p>├── style.css &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Estilos globales</p>
 <p>├── index.html</p>
-<p>├── package-lock.json</p>
-<p>├── package.json</p>
-<p>└── vite.config.js</p>
 <p>&nbsp;</p>
-<ul>
-  <li>public/especies: Contiene las imagenes</li>
-  <li>src/models/ : Contiene la logica de los datos</li>
-  <li>src/vievs/: Maneja la representación visual de la interfaz, como se ve el avatar y el tragamonedas</li>
-  <li>src/controllers/: Gestiona la lógica de interacción en slotController.js</li>
-  <li>src/utils/: Funciones de apoyo para asegurar variaciones aleatorias controladas como seededRandom.js y counter.js</li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<h2>&nbsp;</h2>
+<h2>Flujo de creacion del combinador</h2>
+<ol>
+  <li>Abrir y completar el formulario /form-standalone.html</li>
+  <li>Generar el JSON con la configuración</li>
+  <li>Abrir aplicacion e ingresar el JSON</li>
+  <li>Probar generador y ajustar avatar de ser necesario</li>
+  <li>Exportar paquete</li>
+  <li>Descomprimir ZIP</li>
+  <li>Abrir index.html y disfrutar combinador</li>
+</ol>
 <h2>Plantillas disponibles</h2>
 <p>Para facilitar la creación de nuevas actividades basadas en esta tecnología, ponemos a tu disposición las siguientes plantillas:</p>
 <ul>
