@@ -2,7 +2,7 @@
 title: Nivel 1
 description: Aquí se puede encontrar las características y lo relacionado con el Nivel 1 del videojuego Defiende a la Colmena.
 published: true
-date: 2026-07-14T20:51:55.318Z
+date: 2026-07-25T01:59:39.776Z
 tags: contenidos interactivos, gamificación, interactivo
 editor: markdown
 dateCreated: 2026-07-14T20:51:55.318Z
@@ -15,6 +15,7 @@ En el nivel 1 se puede encontrar lo siguiente:
 - Temporizador de ventaja antes del primer ataque.
 - Ataque por acoso térmico.
 - Vidas del panal.
+- Siguiente Nivel
 
 Todas estas opciones se pueden observar en la **Imagen 1**.
 
@@ -63,6 +64,14 @@ En la parte superior derecha de la pantalla se encuentra el texto de **"Panal"**
 ![vidas_panal_n1dc.png](/vidas_panal_n1dc.png){.align-center}
 <p align="center" style="font-size: 14px;">
   Imagen 5. Contador de vidas del Panal
+</p>
+
+## Siguiente Nivel
+Una vez que el jugador haya vencido a todas las avispas, el panal aún siga con vida y el temporizador de estaciones se encuentre en invierno, entonces aparecerá un panel en donde se mostrará las felicitaciones por haber ganado ese nivel y un botón que dirigirá al siguiente nivel, el *Nivel 2*.
+
+![fin_niv1_dc.png](/fin_niv1_dc.png){.align-center}
+<p align="center" style="font-size: 14px;">
+  Imagen 6. Panel que muestra al jugador que ha ganado el primer nivel.
 </p>
 
 
